@@ -15,7 +15,7 @@ class App {
     this.moveX = 0;
     this.offsetX = 0;
 
-    document.addEventListener("ponterdown", this.onDown.bind(this), false);
+    document.addEventListener("pointerdown", this.onDown.bind(this), false);
     document.addEventListener("pointermove", this.onMove.bind(this), false);
     document.addEventListener("pointerup", this.onUp.bind(this), false);
 
@@ -31,9 +31,9 @@ class App {
 
     this.polygon = new Polygon(
       this.stageWidth / 2,
-      this.stageHeight / 2,
-      this.stageHeight / 3,
-      3
+      this.stageHeight + this.stageHeight / 4,
+      this.stageHeight / 1.5,
+      15
     );
   }
 
@@ -48,7 +48,6 @@ class App {
   }
 
   onDown(e) {
-    console.log(e);
     this.isDown = true;
     this.moveX = 0;
     this.offsetX = e.clientX;
